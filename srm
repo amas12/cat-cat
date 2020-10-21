@@ -9,3 +9,7 @@ fi
 if [ -e ~/RECYCLE/$1 ]
    then
     echo "$1" 'файл в корзине
+#сжать файл
+ gzip ~/RECYCLE/$1
+   find ~/RECYCLE/ -mtime +6 -type f -delete
+fi
