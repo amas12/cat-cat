@@ -1,0 +1,16 @@
+
+if [ -e ~/RECYCLE ]
+  then
+    mv "$1" ~/RECYCLE
+  else 
+    mkdir ~/RECYCLE
+    mv "$1" ~/RECYCLE
+fi
+#проверить, есть ли файл в ~ / RECYCLE - затем отобразить сообщение о том, что файл в корзине
+if [ -e ~/RECYCLE/$1 ]
+   then
+    echo "$1" 'файл в корзиyе'
+#сжать файл
+ gzip ~/RECYCLE/$1
+   find ~/RECYCLE/ -mtime +6 -type f -delete
+fi
