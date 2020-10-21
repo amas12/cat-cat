@@ -1,1 +1,8 @@
-
+if [ -e ~/RECYCLE ]
+  then
+    mv "$1" ~/RECYCLE
+  else
+    mkdir ~/RECYCLE
+    mv "$1" ~/RECYCLE
+fi
+#проверить, есть ли файл в ~ / RECYCLE - затем отобразить сообщение о том, что файл в корзине
